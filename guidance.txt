@@ -1,0 +1,100 @@
+CREATING A FULL STACK MERN APP (Node, React)
+
+    -Create a folder on the desktop where the application will reside:
+
+        memories_project
+
+    -Open the folder on VSCode
+
+    -Create 2 folders: client and server.
+
+    -On the terminal, split the window and cd into both (one each side)
+
+CLIENT FOLDER (on its terminal window):
+
+    -Create an empty React application:
+        npx create-react-app ./
+        
+... while the app is installing...
+
+SERVER FOLDER :
+
+    -Create an index.js file (starting point of our server app)
+
+    -On its terminal type:
+        npm init -y (to initialize an empty package json to install the dependencies we will use)
+
+        -Install the following dependencies:
+
+            npm install body-parser cors express mongoose nodemon
+
+            body-parser (enables to send post requests)
+            cors (enable cross origin requests)
+            express (framework to create the routing of our application)
+            mongoose (create models for our posts)
+            nodemon (restarts server automatically)
+
+        While packages are installing...
+
+            Start importing them into the index.js file (SERVER):
+
+                import express from "express";
+                import bodyParser from "body-parser";
+                import mongoose from "mongoose";
+                import cors from 'cors';
+
+            In order for this to work, we have to modify our package json:
+
+                Between the main and the keywords keys add:
+
+                    "type": "module",
+                    
+                    "scripts": {
+                        "start": "nodemon index.js"
+                    },
+
+We can go back to the client side node to install the needed packages.
+
+CLIENT
+
+    Install dependencies on the terminal:
+
+        npm install axios moment react-file-base-64 redux redux-thunk
+
+        axios (API requests)
+        moment (Library for working with time and date)
+        react-file-base-64 (converts images)
+        redux()
+        redux-thunk(using asynchronous actions using Redux)
+
+
+    While installing...
+
+    -Delete the src folder on the client 
+    -Create a new src folder 
+    -Create an index.js file to connect our React application:
+
+        import React from 'react';
+        import ReactDom from 'react-dom';
+
+        import App from './App'
+
+        ReactDom.render(<App />, document.getElementById('root'));
+                
+Now we have the client running. But first we need to work on the server: 
+    
+    - Connect to the database
+    - Create a mongodb cluster
+    - Set up the models 
+    - Create some documents
+
+SERVER...
+    
+    - On the index.js initialize the app as an express application:
+        
+        const app = express();
+
+    
+
+
+
